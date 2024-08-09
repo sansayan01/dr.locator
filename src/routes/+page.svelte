@@ -41,9 +41,11 @@
 		Your Trusted Companion in Finding the Right Doctor.
 	</h2>
 	<div >
-		<form action="" class="my-10 flex flex-row w-full items-center justify-center gap-4">	
+		<form action="/" method="post" class="my-10 flex flex-row w-full items-center justify-center gap-4">	
 			<div class="">
 				<input
+				    id="search_query"
+					name="search_query"
 					type="text"
 					class="md:w-80 w-48 rounded-full bg-white/30 dark:bg-white/10 p-2 px-4 text-gray-800 dark:text-gray-200 placeholder-gray-500 shadow-lg backdrop-blur-lg focus:outline-none focus:ring-2 focus:ring-blue-500 border"
 					placeholder="Enter your text here..."

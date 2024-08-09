@@ -42,7 +42,7 @@
 	<div class="h-full w-full md:w-72">
 		<Card.Root class="h-full md:w-72 w-full">
 			<Card.Header>
-				<Card.Title>Search Result</Card.Title>
+				<Card.Title>Filter Search Result</Card.Title>
 			</Card.Header>
 			<Card.Content>
 				<form on:submit|preventDefault={handleSubmit} class="w-full max-w-md space-y-4">
