@@ -10,7 +10,7 @@ import Header from '$lib/components/shared/header.svelte';
 </svelte:head>
 
 <ModeWatcher defaultMode="dark"/>
-<div class="border-b fixed w-full backdrop-blur-md">
+<div class="border-b fixed w-full backdrop-blur-md z-[10]">
 	<div class="mx-auto max-w-[1000px] p-2"><Header /></div></div>
 <main class="mx-auto max-w-[1000px] p-2 px-4 md:px-2">
 	

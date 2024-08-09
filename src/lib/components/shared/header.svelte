@@ -19,8 +19,14 @@
         </div>
         <div class="flex flex-row justify-center items-center gap-2">
             <div>
-                <button class="p-1 px-3"><p class="text-md font-semibold">About Us</p></button>
-                
+                <a href="/search">
+                <button class="p-1 px-3"><p class="text-md font-semibold opacity-60">Search</p></button>
+                </a>
+            </div>
+            <div>
+                <a href="/">
+                <button class="p-1 px-3"><p class="text-md font-semibold opacity-60">About Us</p></button>
+                </a>
             </div>
             <div>
                 <Button on:click={toggleMode} variant="outline" size="icon">

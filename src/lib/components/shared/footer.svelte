@@ -1,4 +1,4 @@
-<footer class="border-t">
+<footer class="border-t mt-10">
 	<div class="mt-10 flex flex-col items-start gap-4 justify-between md:flex-row">
 		<div class="flex flex-col gap-2 w-full justify-center items-center md:justify-start md:items-start">
 			<div class="flex flex-row items-center justify-start gap-2">
