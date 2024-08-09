@@ -30,6 +30,7 @@
     </div>
 {:else}
     <div class="">
+        <h1 class="text-2xl font-semibold mb-2">Here are the closest matches :</h1>
         {#each articles as article }
         <div class="mb-4 w-full rounded-lg dark:bg-neutral-900 bg-[#eceaea]  backdrop-blur-lg border    p-6">
             <h1 class="text-xl font-bold ">{article.name}</h1>

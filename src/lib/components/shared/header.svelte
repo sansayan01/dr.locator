@@ -8,12 +8,12 @@
 
 <header class="flex">
     <nav class="flex flex-row justify-between items-center w-full">
-        <div class="flex flex-row justify-center items-center gap-2">
+        <a href="/"><div class="flex flex-row justify-center items-center gap-2">
             
                 <img src="/logo.png" alt="logo" class="h-10 w-10 object-contain">
-            <a href="/">
-             <h1 class="text-3xl font-bold hidden md:flex">Aragya</h1></a>
-        </div>
+            
+             <h1 class="text-3xl font-bold hidden md:flex">Aragya</h1>
+        </div></a>
         <div class="align-middle">
            
         </div>

@@ -93,6 +93,7 @@
 	</div>
 	<div class=" w-full overflow-y-scroll h-full no-scrollbar">
 		{#if result.length > 2}
+			<h1 class="text-2xl font-semibold mb-2">Here are the closest matches :</h1>
 			{#each data_ as r}<div class="mb-4 w-full rounded-lg dark:bg-neutral-900 bg-[#eceaea]  backdrop-blur-lg border    p-6">
 					<h1 class="text-xl font-bold ">{r.name}</h1>
 					<p class="font-bold mb-2 opacity-70">{r.speciality} | {r.experience_years} years of experience</p>
