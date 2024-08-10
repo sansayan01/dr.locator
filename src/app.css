@@ -139,7 +139,7 @@
   color: black;
 }
 .text-res {
-  width: 250px;
+  max-width: 250px;
 }
 .user .text-res {
   background-color: #afc3f8;

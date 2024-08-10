@@ -128,7 +128,7 @@
 		city: string;
 	}];
 
-	let endpoint = 'https://aragya-alpha.vercel.app/api/search';
+	let endpoint = '/api/search';
 	let params = {
 		city: '',
 		speciality: ''

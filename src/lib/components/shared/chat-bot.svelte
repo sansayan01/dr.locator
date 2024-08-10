@@ -9,8 +9,13 @@
 	function toggleoff() {
 		x = false;
 	}
-
-	
+	import { onMount } from 'svelte';
+	let chatContainer: HTMLDivElement;
+	function scrollToBottom() {
+        if (chatContainer) {
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+    }
 
 	interface ChatMessage {
 		role: 'user' | 'bot';
@@ -36,7 +41,7 @@
 			const formData = new FormData();
 			formData.append('message', inputMessage);
 
-			const res = await fetch('/api/gemini', {
+			const res = await fetch('https://aragya-alpha.vercel.app/api/gemini', {
 				method: 'POST',
 				body: formData
 			});
@@ -59,6 +64,15 @@
 			isLoading = false;
 		}
 	}
+	onMount(() => {
+        scrollToBottom();
+    });
+
+    $: {
+        if (chatHistory.length) {
+            setTimeout(scrollToBottom, 0);
+        }
+    }
 </script>
 
 <div class="fixed md:bottom-20 bottom-4 right-4 z-[10] md:right-10">
@@ -74,12 +88,12 @@
 		<div class="flex flex-col items-center justify-center">
 			<div class="card-wrapper h-[500px] w-[300px] md:w-[400px]">
 				<div class="absolute right-2 top-2 z-[10] flex w-full justify-end">
-					<button class="rounded-md border p-1" on:click={toggleoff}>
+					<button class="rounded-md border p-1 bg-white/10 backdrop-blur-md" on:click={toggleoff}>
 						<X />
 					</button>
 				</div>
-				<div class="card-content flex flex-col items-start justify-start text-xs">
-					<div class="no-scrollbar mb-16 mt-2 h-full w-full overflow-x-scroll rounded-md p-2">
+				<div class="card-content flex flex-col items-start justify-start text-xs" >
+					<div class="no-scrollbar mb-16 mt-2 h-full w-full overflow-x-scroll rounded-md p-2 chatContainer" bind:this={chatContainer}>
 						<div
 							class="mx-auto mb-2 w-48 rounded-xl bg-cyan-200 p-2 text-center text-xs text-black"
 						>
