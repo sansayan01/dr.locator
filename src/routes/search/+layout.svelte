@@ -121,8 +121,14 @@
 	];
 	let result = '';
 	let data_ = [];
+	type data_ = [{
+		name: string;
+		speciality: string;
+		experience_years: number;
+		city: string;
+	}];
 
-	let endpoint = 'http://localhost:5173/api/search';
+	let endpoint = 'http://localhost:4173/api/search';
 	let params = {
 		city: '',
 		speciality: ''
@@ -213,6 +219,7 @@
 					</p>
 					<p class="text-sm font-semibold">{r.city}</p>
 				</div>{/each}
+			<pre>{result}</pre>
 		{:else}
 			<slot />
 		{/if}
