@@ -14,15 +14,27 @@ const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash",generationCon
 
 
 
-let history = [];
 
 async function getResponse(prompt: string) {
-    const chat = await model.startChat({ history: history });
+    let history = [{
+            "role": "user",
+            "parts": [
+                "Your name is Aragya, You are a medical expert, if anyone asks for any MEDICAL assistance , you will use your generative intelligence and skill to assist them. ",
+            ],
+        },
+        {
+            "role": "model",
+            "parts": [
+                "Hello there! I am Aragya, your friendly medical assistant. I'm here to help you understand all things related to medical issues. 💧\n\nI'm eager to help any quaries.\n\nAsk me anything about medical issues\n\n How can I assist you?",
+            ],
+        },];
+
+    const chat = await model.startChat({ generation_config,history:history});
     const result = await chat.sendMessage(prompt);
     const response = await result.response;
     const text = response.text();
     // Add the new message pair to the history
-    history.push({ role: "user", parts: prompt });
+    history.push({ role: "user", parts: [prompt] });
     history.push({ role: "model", parts: text });
   
     // console.log(text);
