@@ -61,7 +61,7 @@
 	}
 </script>
 
-<div class="fixed bottom-20 right-4 z-[10] md:right-10">
+<div class="fixed md:bottom-20 bottom-4 right-4 z-[10] md:right-10">
 	{#if x == false}
 		<button
 			class="flex flex-row items-center gap-2 rounded-full bg-purple-500/30 p-2 px-4 backdrop-blur-lg"
