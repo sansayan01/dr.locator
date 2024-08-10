@@ -3,77 +3,78 @@
 @tailwind utilities;
 
 
- 
+
 @layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
- 
+
     --muted: 0 0% 96.1%;
     --muted-foreground: 0 0% 45.1%;
- 
+
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
- 
+
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
- 
+
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
- 
+
     --primary: 0 0% 9%;
     --primary-foreground: 0 0% 98%;
- 
+
     --secondary: 0 0% 96.1%;
     --secondary-foreground: 0 0% 9%;
- 
+
     --accent: 0 0% 96.1%;
     --accent-foreground: 0 0% 9%;
- 
+
     --destructive: 0 72.2% 50.6%;
     --destructive-foreground: 0 0% 98%;
- 
+
     --ring: 0 0% 3.9%;
- 
+
     --radius: 0.5rem;
   }
- 
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
- 
+
     --muted: 0 0% 14.9%;
     --muted-foreground: 0 0% 63.9%;
- 
+
     --popover: 0 0% 3.9%;
     --popover-foreground: 0 0% 98%;
- 
+
     --card: 0 0% 3.9%;
     --card-foreground: 0 0% 98%;
- 
+
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
- 
+
     --primary: 0 0% 98%;
     --primary-foreground: 0 0% 9%;
- 
+
     --secondary: 0 0% 14.9%;
     --secondary-foreground: 0 0% 98%;
- 
+
     --accent: 0 0% 14.9%;
     --accent-foreground: 0 0% 98%;
- 
+
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
- 
+
     --ring: 0 0% 83.1%;
   }
 }
- 
+
 @layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -84,11 +85,14 @@
 }
 
 .no-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 @layer utilities {
+
   /* Act as a border */
   .card-wrapper {
     @apply relative overflow-hidden rounded-2xl bg-gradient-to-b dark:from-slate-700 dark:to-slate-800 from-slate-200 to-slate-400;
@@ -96,11 +100,9 @@
 
   /* Gradient */
   .card-wrapper::before {
-    background: conic-gradient(
-      rgb(225, 0, 250) 0deg,
-      rgb(0, 119, 255) 0deg,
-      transparent 80deg
-    );
+    background: conic-gradient(rgb(225, 0, 250) 0deg,
+        rgb(0, 119, 255) 0deg,
+        transparent 80deg);
 
     @apply absolute left-[-25%] top-[-25%] h-[150%] w-[150%] animate-border-spin content-[''];
   }
@@ -109,4 +111,40 @@
   .card-content {
     @apply absolute left-[2px] top-[2px] h-[calc(100%-4px)] w-[calc(100%-4px)] rounded-2xl bg-background;
   }
+}
+
+
+
+.message {
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  display: flex;
+
+}
+
+.user {
+
+  text-align: right;
+  color: black;
+}
+.user.message{
+  flex-direction: row-reverse;
+}
+.bot .message{
+  flex-direction: row;
+}
+.bot {
+
+  color: black;
+}
+.text-res {
+  width: 250px;
+}
+.user .text-res {
+  background-color: #afc3f8;
+}
+
+.bot .text-res {
+  background-color: #e7e9e9;
 }
