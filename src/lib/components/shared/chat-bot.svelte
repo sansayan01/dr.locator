@@ -41,7 +41,7 @@
 			const formData = new FormData();
 			formData.append('message', inputMessage);
 
-			const res = await fetch('https://aragya-alpha.vercel.app/api/gemini', {
+			const res = await fetch('/api/gemini', {
 				method: 'POST',
 				body: formData
 			});
