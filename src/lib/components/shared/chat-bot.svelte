@@ -2,7 +2,7 @@
 	
 	import { MessageCircle, Send, X } from 'lucide-svelte';
 
-	let x = true;
+	let x = false;
 	function toggleon() {
 		x = true;
 	}
