@@ -3,7 +3,7 @@ import { error } from "@sveltejs/kit";
 
 
 // Assuming you have a data file
-export const data = [
+const data = [
     {
         "name": "Dr. Christina Hall",
         "speciality": "General Surgeon",
