@@ -6,7 +6,119 @@
 	import { Label } from '$lib/components/ui/label/index.js';
 	import * as Form from '$lib/components/ui/form';
 
-	import { city } from '$lib/store';
+	const city = [
+		'Agra',
+		'Ahmedabad',
+		'Ajmer',
+		'Ambala',
+		'Amritsar',
+		'Asansol',
+		'Bathinda',
+		'Belagavi',
+		'Bengaluru',
+		'Bhagalpur',
+		'Bhavnagar',
+		'Bhilai',
+		'Bhopal',
+		'Bhubaneswar',
+		'Bilaspur',
+		'Bokaro',
+		'Chandigarh',
+		'Chennai',
+		'Coimbatore',
+		'Cuttack',
+		'Darbhanga',
+		'Daman',
+		'Dhanbad',
+		'Dharamshala',
+		'Dibrugarh',
+		'Durg',
+		'Durgapur',
+		'Faridabad',
+		'Gaya',
+		'Guwahati',
+		'Guntur',
+		'Gurgaon',
+		'Gwalior',
+		'Haldwani',
+		'Haridwar',
+		'Hazaribagh',
+		'Howrah',
+		'Hubballi-Dharwad',
+		'Hyderabad',
+		'Indore',
+		'Jabalpur',
+		'Jaipur',
+		'Jalandhar',
+		'Jamshedpur',
+		'Jodhpur',
+		'Jorhat',
+		'Karaikal',
+		'Karimnagar',
+		'Karnal',
+		'Kavaratti',
+		'Khammam',
+		'Kochi',
+		'Kolkata',
+		'Kollam',
+		'Korba',
+		'Kota',
+		'Kozhikode',
+		'Kullu',
+		'Lucknow',
+		'Ludhiana',
+		'Madurai',
+		'Mangalore',
+		'Mandi',
+		'Margao',
+		'Mapusa',
+		'Meerut',
+		'Muzaffarpur',
+		'Mumbai',
+		'Mysuru',
+		'Nagpur',
+		'Nashik',
+		'Nellore',
+		'New Delhi',
+		'Nizamabad',
+		'Old Delhi',
+		'Panaji',
+		'Panipat',
+		'Patiala',
+		'Patna',
+		'Pondicherry',
+		'Ponda',
+		'Port Blair',
+		'Puducherry',
+		'Pune',
+		'Puri',
+		'Rajkot',
+		'Rajnandgaon',
+		'Ranchi',
+		'Rishikesh',
+		'Roorkee',
+		'Rourkela',
+		'Salem',
+		'Sambalpur',
+		'Shimla',
+		'Siliguri',
+		'Silchar',
+		'Solan',
+		'Surat',
+		'Tezpur',
+		'Thane',
+		'Thiruvananthapuram',
+		'Tiruchirappalli',
+		'Tirupati',
+		'Udaipur',
+		'Ujjain',
+		'Vadodara',
+		'Varanasi',
+		'Vasco da Gama',
+		'Vijayawada',
+		'Visakhapatnam',
+		'Warangal'
+	];
 	let result = '';
 	let data_ = [];
 
@@ -38,9 +150,9 @@
 	}
 </script>
 
-<section class="flex md:h-[88vh] md:flex-row flex-col items-start justify-start gap-2">
+<section class="flex flex-col items-start justify-start gap-2 md:h-[88vh] md:flex-row">
 	<div class="h-full w-full md:w-72">
-		<Card.Root class="h-full md:w-72 w-full">
+		<Card.Root class="h-full w-full md:w-72">
 			<Card.Header>
 				<Card.Title>Filter Search Result</Card.Title>
 			</Card.Header>
@@ -54,7 +166,6 @@
 							City
 						</label>
 						<select
-							
 							id="city"
 							bind:value={params.city}
 							class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
@@ -64,7 +175,6 @@
 								<option value={option}>{option}</option>
 							{/each}
 						</select>
-						
 					</div>
 
 					<div class="space-y-2">
@@ -91,12 +201,16 @@
 			></Card.Root
 		>
 	</div>
-	<div class=" w-full overflow-y-scroll h-full no-scrollbar">
+	<div class=" no-scrollbar h-full w-full overflow-y-scroll">
 		{#if result.length > 2}
-			<h1 class="text-2xl font-semibold mb-2">Here are the closest matches :</h1>
-			{#each data_ as r}<div class="mb-4 w-full rounded-lg dark:bg-neutral-900 bg-[#eceaea]  backdrop-blur-lg border    p-6">
-					<h1 class="text-xl font-bold ">{r.name}</h1>
-					<p class="font-bold mb-2 opacity-70">{r.speciality} | {r.experience_years} years of experience</p>
+			<h1 class="mb-2 text-2xl font-semibold">Here are the closest matches :</h1>
+			{#each data_ as r}<div
+					class="mb-4 w-full rounded-lg border bg-[#eceaea] p-6 backdrop-blur-lg dark:bg-neutral-900"
+				>
+					<h1 class="text-xl font-bold">{r.name}</h1>
+					<p class="mb-2 font-bold opacity-70">
+						{r.speciality} | {r.experience_years} years of experience
+					</p>
 					<p class="text-sm font-semibold">{r.city}</p>
 				</div>{/each}
 		{:else}
