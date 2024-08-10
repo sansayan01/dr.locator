@@ -218,7 +218,7 @@
 					</p>
 					<p class="text-sm font-semibold">{r.city}</p>
 				</div>{/each}
-			<pre>{result}</pre>
+			
 		{:else}
 			<slot />
 		{/if}
