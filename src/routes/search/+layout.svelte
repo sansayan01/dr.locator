@@ -128,7 +128,7 @@
 		city: string;
 	}];
 
-	let endpoint = 'http://localhost:4173/api/search';
+	let endpoint = 'https://localhost:4173/api/search';
 	let params = {
 		city: '',
 		speciality: ''
