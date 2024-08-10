@@ -1,10 +1,6 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button/index.js';
 	import * as Card from '$lib/components/ui/card/index.js';
-	import * as Select from '$lib/components/ui/select/index.js';
-	import { Input } from '$lib/components/ui/input/index.js';
-	import { Label } from '$lib/components/ui/label/index.js';
-	import * as Form from '$lib/components/ui/form';
+	
 
 	const city = [
 		'Agra',
@@ -137,8 +133,11 @@
 	// Options for select inputs
 
 	async function handleSubmit() {
-		const url = new URL(endpoint);
-		Object.keys(params).forEach((key) => url.searchParams.append(key, params[key]));
+		const url = new URL(endpoint, window.location.origin);
+        Object.keys(params).forEach((key) => url.searchParams.append(key, params[key]));
+        console.log('Fetching from URL:', url.toString());
+		// const url = new URL(endpoint);
+		// Object.keys(params).forEach((key) => url.searchParams.append(key, params[key]));
 		// console.log(url);
 
 		try {
